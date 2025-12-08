@@ -6,7 +6,7 @@ applications:
     memory: 512M
     instances: 1
     stack: windows
-    command: ./dotnet-windows-app.exe
+    command: dotnet-windows-app.exe
     env:
       ASPNETCORE_ENVIRONMENT: Production
 
