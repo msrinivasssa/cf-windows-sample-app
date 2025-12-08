@@ -1,0 +1,12 @@
+---
+applications:
+  - name: dotnet-windows-app
+    buildpack: hwc_buildpack
+    random-route: true
+    memory: 512M
+    instances: 1
+    stack: windows2016
+    env:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://0.0.0.0:8080
+
