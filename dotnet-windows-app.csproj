@@ -10,8 +10,4 @@
     <PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
 </Project>
