@@ -8,5 +8,4 @@ applications:
     stack: windows2016
     env:
       ASPNETCORE_ENVIRONMENT: Production
-      ASPNETCORE_URLS: http://0.0.0.0:8080
 
