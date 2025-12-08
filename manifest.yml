@@ -1,11 +1,12 @@
 ---
 applications:
   - name: dotnet-windows-app
-    buildpack: hwc_buildpack
+    buildpack: binary_buildpack
     random-route: true
     memory: 512M
     instances: 1
     stack: windows
+    command: ./dotnet-windows-app.exe
     env:
       ASPNETCORE_ENVIRONMENT: Production
 
