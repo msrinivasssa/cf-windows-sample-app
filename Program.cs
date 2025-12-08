@@ -2,6 +2,7 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -19,17 +20,20 @@ var builder = Host.CreateDefaultBuilder(args)
         {
             app.UseRouting();
             
-            app.MapGet("/", () => 
+            app.UseEndpoints(endpoints =>
             {
-                return Results.Ok(new 
-                { 
-                    message = "Hello World from .NET on Windows Cloud Foundry!",
-                    timestamp = DateTime.UtcNow,
-                    platform = Environment.OSVersion.ToString()
+                endpoints.MapGet("/", () => 
+                {
+                    return Results.Ok(new 
+                    { 
+                        message = "Hello World from .NET on Windows Cloud Foundry!",
+                        timestamp = DateTime.UtcNow,
+                        platform = Environment.OSVersion.ToString()
+                    });
                 });
-            });
 
-            app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+                endpoints.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+            });
         });
     });
 
