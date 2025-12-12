@@ -1,6 +1,7 @@
 ---
 applications:
   - name: dotnet-windows-app
+    path: bin/Release/net8.0/win-x64/publish/
     buildpack: binary_buildpack
     random-route: true
     memory: 512M
